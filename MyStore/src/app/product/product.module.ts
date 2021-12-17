@@ -24,7 +24,8 @@ import { ProductpageComponent } from './productpage/productpage.component';
   exports: [
     ProductlistComponent,
     ProductcartComponent,
-    ProductitemComponent
+    ProductitemComponent,
+    ProductpageComponent
   ]
 })
 export class ProductModule { }
