@@ -1,2 +1,24 @@
-<p>productpage works!</p>
-<h6>{{ id }}</h6>
+<div>
+    <div>
+        <form (ngSubmit)="addToCart()">
+            <img src={{product?.url}} alt={{product?.name}}/>
+            <h3>{{ product?.name }}</h3><br>
+            <p>{{ product?.description }}</p>
+            <span>${{ product?.price }}</span><br>
+            <select name="quantity" [(ngModel)]="quantity">
+                <option value="1" selected>1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+            </select>            
+            <input type="submit" value="Add To Cart">
+            <a routerLink="/">Return To Products</a>
+        </form>
+        </div>
+</div>
