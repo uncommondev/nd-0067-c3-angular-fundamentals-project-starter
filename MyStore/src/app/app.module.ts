@@ -1,3 +1,4 @@
+import { FormsModule } from '@angular/forms';
 import { ComponentsModule } from './components/components.module';
 import { ProductModule } from './product/product.module';
 import { NgModule } from '@angular/core';
@@ -19,6 +20,7 @@ import { CartModule } from './cart/cart.module';
     ProductModule,
     ComponentsModule,
     CartModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

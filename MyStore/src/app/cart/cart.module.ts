@@ -2,6 +2,7 @@ import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CartCheckoutComponent } from './cart-checkout/cart-checkout.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -11,7 +12,8 @@ import { CartCheckoutComponent } from './cart-checkout/cart-checkout.component';
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    FormsModule
   ],
   exports: [
     CartCheckoutComponent
