@@ -1,6 +1,7 @@
 import { CartService } from './../../../../services/cart.service';
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import Product from 'models/product';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cart-checkout',
@@ -16,9 +17,8 @@ export class CartCheckoutComponent implements OnInit {
   // Cart items
   cartTotal: string = this.cartService.cartTotal()
 
-  @Output() createOrder: EventEmitter<any> = new EventEmitter()
 
-  constructor(private cartService: CartService) { }
+  constructor(private cartService: CartService, private router: Router) { }
 
   ngOnInit(): void {
     this.cartItems = this.cartService.getCart()
@@ -26,20 +26,15 @@ export class CartCheckoutComponent implements OnInit {
   }
 
   checkoutOrder() {
-    // BLOC for order - if required
-    // Proceed to pass the details to the next page -->
-    // Add the event emitter
-    const order = {
-      fullname: this.fullname,
-      address: this.address,
-      creditcard: this.creditcard
-    }
-
-    this.createOrder.emit(order)
+    this.cartService.populateOrder(this.fullname, this.address)
 
     this.fullname = ""
     this.address = ""
     this.creditcard
+    this.cartItems = [] // Clears the cart
+    this.cartService.clearCart()
+    this.cartTotal = ""
+    this.router.navigate(["/order"])
   }
 
   updateQuantity(index: number, quant: string ){// ev: Event){ //quantity: number){

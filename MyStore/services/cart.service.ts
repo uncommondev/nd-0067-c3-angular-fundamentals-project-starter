@@ -7,6 +7,11 @@ import { Injectable } from '@angular/core';
 })
 export class CartService {
   cart: Product[]
+  order: {
+    fullname: string,
+    address: string,
+    total: string
+  }
 
   constructor() { 
     this.cart = []
@@ -47,5 +52,25 @@ export class CartService {
     console.log(`Completed total`)
     console.log(total.toFixed(2))
     return(total.toFixed(2))
+  }
+
+  clearCart() {
+    this.cart = []
+  }
+
+  populateOrder(fullname: string, address: string){
+    this.order = {
+      fullname,
+      address,
+      total: this.cartTotal()
+    }
+  }
+
+  clearOrder(){
+    this.order = {
+      fullname: "",
+      address: "",
+      total: ""
+    }
   }
 }
