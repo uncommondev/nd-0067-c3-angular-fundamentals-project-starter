@@ -1,5 +1,9 @@
 # MyStore Project
 
+## Code Base
+
+All code resides inside the `MyStore` folder
+
 ## Overview
 
 Frontend project using the Angular framework to create a storefront. Leveraging the features Angular provides to make this all come together
