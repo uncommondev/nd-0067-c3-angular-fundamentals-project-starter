@@ -1,25 +1,23 @@
-<div>
-    <div>
-        <!-- cart -->
-        <!-- DISPLAY the cart
-        Total: $ -->
-        <ul>
-            <li *ngFor="let cart of cartItems; let i = index">
-                <img src={{cart?.url}} alt={{cart?.name}}/><br>
-                <h4>{{ cart?.name }}</h4><br>
-                <h5>{{ +cart.price *  (cart.quantity || 1) | number: '1.0-2'}}</h5><br>
+<div class="page-container">
+    <div class="cart-item">
+            <div *ngFor="let cart of cartItems; let i = index">
+                <img src={{cart?.url}} alt={{cart?.name}}/>
+                <h4>{{ cart?.name }}</h4>
+                <h5>{{ +cart.price *  (cart.quantity || 1) | number: '1.0-2'}}</h5>
                 Amount: <input #quant type="number" name="quantity" value="{{ cart.quantity }}" step="1" min="1" max="10" (change)="updateQuantity(i, quant.value)"/><br>
                 <button (click)="removeProduct(cart.id)">Remove Product</button><br>
-            </li>
-        </ul>
+            </div>
         <h2>Total: <b>${{ cartTotal }}</b></h2>
     </div>
-    <div>
+    <div class="form-container">
         <!-- form -->
-        <form #form="ngForm" (ngSubmit)="checkoutOrder()">
-            Fullname: <input type="text" required minlength="5" maxlength="50" name="fullname" [(ngModel)]="fullname"/><br>
-            Address: <input type="text" required minlength="7" maxlength="100" name="address" [(ngModel)]="address"/><br>
-            Credit Card: <input type="text" required minlength="15" maxlength="16" name="creditcard" [(ngModel)]="creditcard"/><br>
+        <form #form="ngForm" (ngSubmit)="checkoutOrder()" class="form-margin">
+            Fullname<br>
+            <input type="text" placeholder="(minimum 3 characters)" required minlength="5" maxlength="50" name="fullname" [(ngModel)]="fullname"/><br>
+            Address<br>
+            <input type="text" placeholder="(minimum 7 characters)" required minlength="7" maxlength="100" name="address" [(ngModel)]="address"/><br>
+            Credit Card<br>
+            <input type="text" placeholder="(minimum 15 characters)" required minlength="15" maxlength="16" name="creditcard" [(ngModel)]="creditcard"/><br>
             <input type="submit" [disabled]="form.invalid" value="Submit"><br>
         </form>
     </div>

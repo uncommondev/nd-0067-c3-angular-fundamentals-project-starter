@@ -1,10 +1,10 @@
-<div>
+<div class="detail-container">
 <form (ngSubmit)="addToCart()">
     <img src={{product.url}} alt={{product.name}}/>
     <h3>{{ product.name }}</h3><br>
     <span>${{ product.price }}</span><br>
-    <select name="quantity" [(ngModel)]="quantity">
-        <option value="1" selected>1</option>
+    <select class="select-input" name="quantity" [(ngModel)]="quantity">
+        <option value="1" selected="selected">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
         <option value="4">4</option>
@@ -14,8 +14,8 @@
         <option value="8">8</option>
         <option value="9">9</option>
         <option value="10">10</option>
-    </select>
-    <a routerLink="product/{{product.id}}">View Product</a>
-    <input type="submit" value="Add To Cart">
+    </select><br>
+    <a class="back-link" routerLink="product/{{product.id}}">View Product</a><br>
+    <input type="submit" value="Add To Cart"><br>
 </form>
 </div>

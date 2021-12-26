@@ -1,0 +1,19 @@
+.order-wrapper {
+  display: flex;
+  justify-content: center;
+}
+.confirmation-container {
+    display: inline-block;
+    align-items: center;
+    justify-content: center;
+    margin-top: 8%;
+  }
+
+  a {
+    color: #33B5E5;
+  }
+
+  a:hover {
+    color: #33B5E5;
+    text-decoration: underline;
+  }
