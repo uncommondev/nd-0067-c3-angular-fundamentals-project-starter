@@ -13,11 +13,11 @@
         <!-- form -->
         <form #form="ngForm" (ngSubmit)="checkoutOrder()" class="form-margin">
             Fullname<br>
-            <input type="text" placeholder="(minimum 3 characters)" required minlength="5" maxlength="50" name="fullname" [(ngModel)]="fullname"/><br>
+            <input type="text" placeholder="(minimum 3 characters)" required minlength="5" maxlength="50" name="fullname" [ngModel]="fullname" (ngModelChange)="fullname = $event"/><br>
             Address<br>
-            <input type="text" placeholder="(minimum 7 characters)" required minlength="7" maxlength="100" name="address" [(ngModel)]="address"/><br>
+            <input type="text" placeholder="(minimum 7 characters)" required minlength="7" maxlength="100" name="address" [ngModel]="address" (ngModelChange)="address"/><br>
             Credit Card<br>
-            <input type="text" placeholder="(minimum 15 characters)" required minlength="15" maxlength="16" name="creditcard" [(ngModel)]="creditcard"/><br>
+            <input type="text" placeholder="(minimum 15 characters)" required minlength="15" maxlength="16" name="creditcard" [ngModel]="creditcard" (ngModelChange)="creditcard"/><br>
             <input type="submit" [disabled]="form.invalid" value="Submit"><br>
         </form>
     </div>
