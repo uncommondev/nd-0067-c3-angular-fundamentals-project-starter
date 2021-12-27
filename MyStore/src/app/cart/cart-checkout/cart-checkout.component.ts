@@ -37,13 +37,14 @@ export class CartCheckoutComponent implements OnInit {
     this.router.navigate(["/order"])
   }
 
-  updateQuantity(index: number, quant: string ){// ev: Event){ //quantity: number){
+  updateQuantity(index: number, quant: string ) {
     console.log(`Update Quantity Triggered`)
     console.log(`Quantity`)
     console.log(quant)
     console.log(`Index`)
     console.log(index)
     this.cartService.updateQuantity(+quant, index)
+    this.cartTotal = this.cartService.cartTotal()
   }
 
   removeProduct(id: number){
@@ -52,6 +53,7 @@ export class CartCheckoutComponent implements OnInit {
     console.log(`deleteFromCart`)
     console.log(this.cartItems)
     this.cartService.deleteFromCart(id)
+    this.cartTotal = this.cartService.cartTotal()
   }
 
 }
