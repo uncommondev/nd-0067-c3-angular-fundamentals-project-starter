@@ -9,7 +9,7 @@ import Product from 'models/product';
 })
 export class ProductitemComponent implements OnInit {
   @Input() product: Product
-  quantity: number
+  quantity: number = 1
 
   //@Output() addProductToCart: EventEmitter<Product> = new EventEmitter()
 

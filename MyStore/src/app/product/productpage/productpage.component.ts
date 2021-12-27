@@ -13,7 +13,7 @@ export class ProductpageComponent implements OnInit {
   products: Product[] = []
   product: Product
   id: string
-  quantity: number
+  quantity: number = 1
 
   constructor(private route: ActivatedRoute, private httpService: HttpService, private cart: CartService) { }
 
