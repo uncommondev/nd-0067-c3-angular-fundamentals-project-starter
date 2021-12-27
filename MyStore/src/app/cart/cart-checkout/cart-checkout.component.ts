@@ -27,7 +27,6 @@ export class CartCheckoutComponent implements OnInit {
 
   checkoutOrder() {
     this.cartService.populateOrder(this.fullname, this.address)
-
     this.fullname = ""
     this.address = ""
     this.creditcard

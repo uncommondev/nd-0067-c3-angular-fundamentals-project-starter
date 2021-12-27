@@ -34,12 +34,14 @@ export class CartService {
     this.cart = newCart
     console.log(`deleteFromCart`)
     console.log(this.cart)
+    window.alert(`Item Removed From Cart`)
   }
 
   updateQuantity(quantity: number, index: number){
     this.cart[index].quantity = quantity
     console.log(`updateQuantity`)
     console.log(this.cart)
+    window.alert(`Updated Cart: ${this.cart[index].name} x ${this.cart[index].quantity}`)
   }
 
   cartTotal(): string {
