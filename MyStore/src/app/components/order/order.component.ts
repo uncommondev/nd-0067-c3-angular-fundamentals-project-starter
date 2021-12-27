@@ -8,11 +8,14 @@ import { CartService } from 'services/cart.service';
 })
 export class OrderComponent implements OnInit {
   orderDetails = this.cartService.order
+  displayPage: boolean = false
 
   constructor(private cartService: CartService) { }
 
   ngOnInit(): void {
-
+    if (this.orderDetails !== undefined) {
+      this.displayPage = true
+    }
   }
 
   clearOrder(){
