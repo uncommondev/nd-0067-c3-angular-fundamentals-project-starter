@@ -20,6 +20,8 @@ export class ProductlistComponent implements OnInit {
   }
 
   addToCart(product: Product){
+    console.log(`LIST - product`)
+    console.log(product)
     this.cartService.addToCart(product)
     window.alert(`${product.name} x ${product.quantity} have been added to your cart`)
   }

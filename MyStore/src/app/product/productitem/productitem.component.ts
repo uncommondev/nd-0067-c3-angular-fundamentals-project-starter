@@ -17,7 +17,12 @@ export class ProductitemComponent implements OnInit {
   }
 
   addToCart(){
+    console.log(`this.quantity`)
+    console.log(this.quantity)
     this.product.quantity = this.quantity
+    console.log(`this.product`)
+    console.log(this.product)
     this.addProduct.emit(this.product)
+    this.quantity = 1
   }
 }

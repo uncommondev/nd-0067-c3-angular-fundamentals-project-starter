@@ -4,7 +4,7 @@ export default class Product {
     price: number
     url: string
     description: string
-    quantity?: number
+    quantity: number
 
     constructor(){
         this.id = 1,
