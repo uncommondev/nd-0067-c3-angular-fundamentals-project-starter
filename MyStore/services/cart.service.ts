@@ -27,22 +27,11 @@ export class CartService {
     let indexHolder = this.cart.findIndex(item => item.id === product.id)
     if (indexHolder >= 0) {
       console.log(`ID's DO match`)
-      console.log(this.cart)
       let cQ = +this.cart[indexHolder].quantity
-      console.log(`cQ`) 
-      console.log(cQ) 
       let pQ = +product.quantity
-      console.log(`pQ`) 
-      console.log(pQ) 
       let tQ = +cQ + +pQ
-      console.log(`tQ`) 
-      console.log(tQ) 
-      product.quantity = +tQ
-      console.log(`product.quantity`) 
-      console.log(product.quantity) 
+      product.quantity = +tQ 
       this.cart[indexHolder] = product
-      console.log(`this.cart`)
-      console.log(this.cart)
     }
     else if (indexHolder === -1) {
         console.log(`ID's DON'T match`)
