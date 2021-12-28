@@ -26,6 +26,8 @@ export class CartCheckoutComponent implements OnInit {
   }
 
   checkoutOrder() {
+    console.log(`this.fullname`)
+    console.log(this.fullname)
     this.cartService.populateOrder(this.fullname, this.address)
     this.fullname = ""
     this.address = ""
