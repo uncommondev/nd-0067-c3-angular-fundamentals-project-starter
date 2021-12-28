@@ -18,7 +18,7 @@ export class CartCheckoutComponent implements OnInit {
   cartTotal: string = this.cartService.cartTotal()
 
 
-  constructor(private cartService: CartService, private router: Router) { }
+  constructor(private cartService: CartService, private router: Router) {}
 
   ngOnInit(): void {
     this.cartItems = this.cartService.getCart()
